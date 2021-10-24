@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+	<input class="click" type="text"/>
+	<input class="focus" type="text"/>
+	<input class="value" type="text"/>
+
+    <script>
+        //1.1 Añade un botón a tu html con el id btnToClick y en tu javascript añade el evento click que ejecute un console log con la información del evento del click
+        let boton = document.createElement("button");
+        let valorBoton = document.createTextNode('Pulsar')
+        boton.id = "btnToClick";
+        document.body.appendChild(boton).appendChild(valorBoton);
+
+        function botonClick(event){
+            console.log(event)
+        }
+        document.getElementById('btnToClick').addEventListener('click',botonClick);
+
+        //1.2 Añade un evento 'focus' que ejecute un console.log con el valor del input.
+        let inputFocus = document.querySelector("input.focus")
+        function handleFocus(event) {
+            console.log(event);
+        }
+        inputFocus.addEventListener("focus", handleFocus);
+
+        //1.3 Añade un evento 'input' que ejecute un console.log con el valor del input.
+        let inputInput = document.querySelector("input.value")
+        function handleInput(event) {
+            console.log(event);
+        }
+        inputInput.addEventListener("input", handleInput);
+
+    </script>
+</body>
+</html>
